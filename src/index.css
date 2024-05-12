@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.removeBtn:hover, .tickBtn:hover {
+  transition: all .6s;
+  scale: 1.2;
+  cursor: pointer;
+}
+

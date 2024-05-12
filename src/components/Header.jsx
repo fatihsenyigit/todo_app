@@ -1,21 +1,21 @@
 
-import { useState } from "react";
+import { useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-
 const Header = ({ setDataList, dataList }) => {
-    const [sameNote, setSameNote] = useState()
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = e.target[0].value;
-    setSameNote(data.trim())
-    if (data.trim() !== '' && data.trim()!==sameNote) {
-setDataList([...dataList, data]);
+    const data = {id:new Date().getTime(),text:e.target[0].value, completed:false};
+    if (data.text.trim() !== "") {
+      setDataList([...dataList, data]);
     }
-    
+    // localStorage.setItem("dataLocal", JSON.stringify(dataList));
     e.target[0].value = "";
   };
+
+  
+  
   return (
     <div className="container mt-3 d-flex flex-column justify-content-center align-items-center">
       <h1>ToDo APP</h1>
